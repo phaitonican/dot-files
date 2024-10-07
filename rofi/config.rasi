@@ -1,0 +1,4 @@
+configuration {
+  modi: "drun,filebrowser";
+}
+@theme "/home/cenk/.config/rofi/nord.rasi"
