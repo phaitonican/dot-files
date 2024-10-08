@@ -28,7 +28,7 @@ in {
     minicom
 
     # MY STUFF
-    #hyprland
+    hyprland
     #yarn
 		parted
 		gparted
@@ -108,7 +108,7 @@ in {
 	programs.firefox.enable = true;
 
 	# hyprland
-	programs.hyprland.enable = true;
+	#programs.hyprland.enable = true;
 
   # Fish Shell
   programs.fish.enable = true;
