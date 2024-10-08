@@ -28,7 +28,7 @@ in {
     minicom
 
     # MY STUFF
-    hyprland
+    #hyprland
     #yarn
 		parted
 		gparted
