@@ -28,10 +28,10 @@ in {
     minicom
 
     # MY STUFF
-    hyprland
-    #yarn
+    wayland
+    #hyprland
 		parted
-		gparted
+		#gparted
     wget
 		minizip
     git
@@ -48,11 +48,11 @@ in {
     pipewire
     wireplumber
     pavucontrol
-    #xfce.thunar
-    #hyprpaper
+    xfce.thunar
+    hyprpaper
     gnome-themes-extra
-    #vlc
-    #imv
+    vlc
+    imv
     rofi-wayland
     #ranger
     neofetch
@@ -60,9 +60,9 @@ in {
     mpv
     mako
     #weechat
-    gamemode
+    #gamemode
     p7zip
-    #unrar
+    unrar
     wl-clipboard
     #brightnessctl
     killall
@@ -71,14 +71,18 @@ in {
 
     unzip
     #discord
-    #prismlauncher
+    prismlauncher
     ffmpeg
     xarchiver
     obs-studio
     polkit
     polkit-kde-agent
-		#jdk
+		jdk
 		vscodium
+    shotcut
+    blender
+    element-desktop
+    #steam
   ];
 
   # Enable the OpenSSH daemon.
@@ -104,11 +108,14 @@ in {
 		ELECTRON_OZONE_PLATFORM_HINT = "wayland";
   };
 
+  # opengl
+  hardware.opengl.enable = true;
+
   # firefox
 	programs.firefox.enable = true;
 
 	# hyprland
-	#programs.hyprland.enable = true;
+	programs.hyprland.enable = true;
 
   # Fish Shell
   programs.fish.enable = true;
