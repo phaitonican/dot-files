@@ -31,7 +31,7 @@ in {
     hyprland
     #yarn
 		parted
-		#gparted
+		gparted
     wget
 		minizip
     git
@@ -41,16 +41,16 @@ in {
     #godot_4
     foot
     #adwaita-icon-theme
-    #waybar
+    waybar
     #xdg-desktop-portal
     grim
     slurp
     pipewire
     wireplumber
-    #pavucontrol
+    pavucontrol
     #xfce.thunar
     #hyprpaper
-    #gnome-themes-extra
+    gnome-themes-extra
     #vlc
     #imv
     rofi-wayland
@@ -72,13 +72,13 @@ in {
     unzip
     #discord
     #prismlauncher
-    #ffmpeg
-    #xarchiver
-    #obs-studio
-    #polkit
-    #polkit-kde-agent
+    ffmpeg
+    xarchiver
+    obs-studio
+    polkit
+    polkit-kde-agent
 		#jdk
-		#vscodium
+		vscodium
   ];
 
   # Enable the OpenSSH daemon.
@@ -105,10 +105,10 @@ in {
   };
 
   # firefox
-	#programs.firefox.enable = true;
+	programs.firefox.enable = true;
 
 	# hyprland
-	#programs.hyprland.enable = true;
+	programs.hyprland.enable = true;
 
   # Fish Shell
   programs.fish.enable = true;
@@ -116,17 +116,17 @@ in {
   environment.shells = with pkgs; [ fish ];
 
   # Nvim default
-  #programs.neovim = {
-  #  enable = true;
-  #  defaultEditor = true;
-  #  configure = {
-  #    customRC = ''
-  #      set number
-  #      set tabstop=2
-	#			set shiftwidth=2
-  #    '';
-  #  };
-  #};
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    configure = {
+      customRC = ''
+        set number
+        set tabstop=2
+				set shiftwidth=2
+      '';
+    };
+  };
 
   # Enable networking
   #networking.networkmanager.enable = true;
@@ -147,16 +147,16 @@ in {
 
   # Greeter
   # Run GreetD on TTY2
-  #services.greetd = {
-  #  enable = true;
-  #  vt = 7;
-  #  settings = {
-  #    default_session = {
-  #      command = "${lib.makeBinPath [pkgs.greetd.tuigreet] }/tuigreet --user-menu --time --cmd Hyprland";
-  #      user = "greeter";
-  #    };
-  #  };
-  #};
+  services.greetd = {
+    enable = true;
+    vt = 7;
+    settings = {
+      default_session = {
+        command = "${lib.makeBinPath [pkgs.greetd.tuigreet] }/tuigreet --user-menu --time --cmd Hyprland";
+        user = "greeter";
+      };
+    };
+  };
 
   # Configure keymap in X11
   #services.xserver = {
@@ -168,47 +168,47 @@ in {
   console.keyMap = "de";
 
   # Enable CUPS to print documents.
-  #services.printing.enable = true;
+  services.printing.enable = true;
 
   # Fonts
-  #fonts.packages = with pkgs; [
-  #  noto-fonts
-  #  noto-fonts-cjk
-  #  noto-fonts-emoji
-  #  liberation_ttf
-  #  fira-code
-  #  fira-code-symbols
-  #  dina-font
-  #  proggyfonts
-  #  font-awesome
-  #  meslo-lgs-nf
-  #  ubuntu_font_family
-  #  (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-  #];
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    dina-font
+    proggyfonts
+    font-awesome
+    meslo-lgs-nf
+    ubuntu_font_family
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
 
   # XDG stuff
 
-  #services.dbus.enable = true;
-  #xdg.portal = {
-  #  enable = true;
+  services.dbus.enable = true;
+  xdg.portal = {
+    enable = true;
     # gtk portal needed to make gtk apps happy
-  #  extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-  #  config.common.default = "*";
-  #};
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    config.common.default = "*";
+  };
 
   # Enable gvfs (mount, trash...) for thunar
-  #services.gvfs.enable = true; # Mount, trash, and other functionalities
-  #services.tumbler.enable = true; # Thumbnail support for images
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
 
   # Enable sound with pipewire.
   #sound.enable = true;
-  #hardware.pulseaudio.enable = false;
-  #security.rtkit.enable = true;
-  #services.pipewire = {
-  #  enable = true;
-  #  alsa.enable = true;
-  #  alsa.support32Bit = true;
- #  pulse.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+   pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
@@ -218,10 +218,10 @@ in {
   #};
 
   # Allow unfree packages
-  #nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Docker
-	#virtualisation.docker.enable = true;
+	virtualisation.docker.enable = true;
 
   # =========================================================================
   #      Users & Groups NixOS Configuration
